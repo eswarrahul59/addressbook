@@ -14,9 +14,9 @@ pipeline {
     }
 
     environment{
-        DEV_SERVER='ec2-user@172.31.8.237'
-        DEPLOY_SERVER='ec2-user@172.31.14.64'
-        IMAGE_NAME='devopstrainer/java-mvn-privaterepos'
+        DEV_SERVER='ec2-user@172.31.38.34'
+        DEPLOY_SERVER='ec2-user@172.31.45.52'
+        IMAGE_NAME='eswarrahul99/privaterepo'
     }
 
     stages {
