@@ -6,7 +6,7 @@ WORKDIR /app
 
 
 # Copy the Maven project definition files
-COPY pom.xml ./pom.xml
+COPY ./pom.xml ./pom.xml
 
 
 # Download the dependencies needed for the build (cache them in a separate layer)
