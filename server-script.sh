@@ -15,6 +15,6 @@ else
   git checkout TF-CICD
 fi
 
-sudo docker build -t $1:$2 /home/ec2-user/addressbook
+
 
 #${IMAGE_NAME}:${BUILD_NUMBER}
