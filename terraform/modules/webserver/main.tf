@@ -49,8 +49,8 @@ resource "aws_instance" "webserver" {
    associate_public_ip_address =true
    subnet_id=var.subnet_id
    vpc_security_group_ids = [aws_security_group.mywebsecurity.id]
-   key_name="awskey"
-   user_data = file("script.sh")   
+   key_name="AWS-Key"
+  # user_data = file("script.sh")   
   tags = {
     Name = "${var.env}-mywebserver"
   }
