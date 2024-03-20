@@ -50,12 +50,10 @@ pipeline {
         }
         }
        stage('Provision the server with TF'){
-            environment{
-                   AWS_ACCESS_KEY_ID =credentials("AWS_ACCESS_KEY_ID")
-                   AWS_SECRET_ACCESS_KEY=credentials("AWS_SECRET_ACCESS_KEY")
-            }
+            
            agent any
            steps{
+              withAWS(credentials: 'jenkins_aws_access_key_id', region: 'ap-south-1')
                script{
                    echo "RUN THE TF Code"
                    dir('terraform'){
