@@ -5,8 +5,7 @@ terraform {
       version = "5.40.0"
     }
   }
-
- terraform {
+ 
   backend "s3" {
     bucket = "mybucket-statefile"
     key    = "terraform.tfstate"
@@ -15,7 +14,6 @@ terraform {
   }
 }
 
-}
 provider "aws" {
   # Configuration options
    region = "ap-south-1"
