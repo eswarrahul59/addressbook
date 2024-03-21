@@ -5,6 +5,16 @@ terraform {
       version = "5.40.0"
     }
   }
+
+ terraform {
+  backend "s3" {
+    bucket = "mybucket-statefile"
+    key    = "terraform.tfstate"
+    region = "ap-south-1"
+    dynamodb_table="mytable"
+  }
+}
+
 }
 provider "aws" {
   # Configuration options
