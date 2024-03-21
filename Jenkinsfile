@@ -61,8 +61,8 @@ pipeline {
                script{
                    echo "RUN THE TF Code"
                    dir('terraform'){
-                       sh "terraform init -migrate-state=true"
-                       sh "terraform state push errored.tfstate"
+                       sh "terraform init"
+                       
                        sh "terraform plan"
                        sh "terraform apply --auto-approve"
                     EC2_PUBLIC_IP=sh(
