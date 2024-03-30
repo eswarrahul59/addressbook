@@ -81,7 +81,7 @@ pipeline {
                script{
                    echo "Deployin on the instance"
                     echo "${EC2_PUBLIC_IP}"
-                     sshagent(['AWS-Key']) {
+                     sshagent(['pair-Key']) {
                 withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
                       sh "ssh -o StrictHostKeyChecking=no ec2-user@${EC2_PUBLIC_IP} sudo yum install docker -y"
                       sh "ssh -o StrictHostKeyChecking=no ec2-user@${EC2_PUBLIC_IP} sudo systemctl start docker"
